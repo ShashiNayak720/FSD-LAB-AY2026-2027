@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🌤 Weather Forecast</h1>
+    <p class="subtitle">Live Weather Information</p>
+
+    <div class="search">
+        <input id="city" placeholder="Enter city">
+        <button onclick="getWeather()">🔍 Search</button>
+        <button onclick="getWeather()">🔄 Refresh</button>
+    </div>
+
+    <div id="result"></div>
+    <section id="forecast">
+    <h2>📅 7-Day Forecast</h2>
+    <div id="forecastCards"></div>
+</section>
+    <footer>
+        <p>🌤 Weather Forecast | Powered by Open-Meteo API</p>
+        <p>© 2026 Weather Dashboard | API Experiment</p>
+    </footer>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
