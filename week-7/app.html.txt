@@ -1,0 +1,72 @@
+<h2>Student Job Application Form</h2>
+
+<form [formGroup]="jobForm" (ngSubmit)="onSubmit()">
+
+  <!-- Name -->
+  <label>Full Name</label><br>
+  <input type="text" formControlName="name"
+         placeholder="First Middle Last">
+
+  <div *ngIf="jobForm.controls.name.invalid &&
+              jobForm.controls.name.touched">
+
+    <span *ngIf="jobForm.controls.name.errors?.['required']">
+      Name is required.
+    </span>
+
+    <span *ngIf="jobForm.controls.name.errors?.['pattern']">
+      Enter a valid name using letters and spaces only.
+    </span>
+
+  </div>
+
+  <br><br>
+
+
+  <!-- Mobile -->
+  <label>Mobile Number</label><br>
+  <input type="text" formControlName="mobile"
+         placeholder="Enter mobile number">
+
+  <div *ngIf="jobForm.controls.mobile.invalid &&
+              jobForm.controls.mobile.touched">
+
+    <span *ngIf="jobForm.controls.mobile.errors?.['required']">
+      Mobile number is required.
+    </span>
+
+    <span *ngIf="jobForm.controls.mobile.errors?.['pattern']">
+      Mobile number must contain at least 10 digits.
+    </span>
+
+  </div>
+
+  <br><br>
+
+
+  <!-- Email -->
+  <label>Email</label><br>
+  <input type="text" formControlName="email"
+         placeholder="example@gmail.com">
+
+  <div *ngIf="jobForm.controls.email.invalid &&
+              jobForm.controls.email.touched">
+
+    <span *ngIf="jobForm.controls.email.errors?.['required']">
+      Email is required.
+    </span>
+
+    <span *ngIf="jobForm.controls.email.errors?.['pattern']">
+      Email must contain @.
+    </span>
+
+  </div>
+
+  <br><br>
+
+
+  <button type="submit" [disabled]="jobForm.invalid">
+    Apply for Job
+  </button>
+
+</form>
